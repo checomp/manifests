@@ -29,26 +29,31 @@ spec:
             secretKeyRef:
               name: mysql-secret
               key: username
+              namespace: kubeflow
         - name: DBCONFIG_PASSWORD
           valueFrom:
             secretKeyRef:
               name: mysql-secret
               key: password
+              namespace: kubeflow
         - name: MYSQL_DATABASE
           valueFrom:
             configMapKeyRef:
               name: pipeline-install-config
               key: mlmdDb
+              namespace: kubeflow
         - name: MYSQL_HOST
           valueFrom:
             configMapKeyRef:
               name: pipeline-install-config
               key: dbHost
+              namespace: kubeflow
         - name: MYSQL_PORT
           valueFrom:
             configMapKeyRef:
               name: pipeline-install-config
               key: dbPort
+              namespace: kubeflow
         command: [ "/bin/metadata_store_server" ]
         args:
           [
