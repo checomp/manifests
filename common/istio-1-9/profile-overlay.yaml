@@ -8,8 +8,6 @@ spec:
       probes: 3
   components:
     ingressGateways:
-    - enabled: false
-      name: istio-ingressgateway
     # Cluster-local gateway for KFServing
     - enabled: true
       name: cluster-local-gateway
@@ -49,7 +47,6 @@ spec:
           - name: http2
             port: 80
             targetPort: 8080
-
     # Disable EgressGateway
     egressGateways:
     - enabled: false
