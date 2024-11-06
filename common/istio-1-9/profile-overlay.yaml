@@ -9,7 +9,7 @@ spec:
   components:
     ingressGateways:
     # Cluster-local gateway for KFServing
-    - enabled: true
+    - enabled: false
       name: cluster-local-gateway
       # https://github.com/istio/istio/issues/19263#issuecomment-615833092
       label:
