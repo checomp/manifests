@@ -8,6 +8,30 @@ spec:
       probes: 3
   components:
     ingressGateways:
+    - enabled: true
+      k8s:
+        resources:
+          requests:
+            cpu: 10m
+            memory: 40Mi
+        service:
+          ports:
+          - name: status-port
+            port: 15021
+            targetPort: 15021
+          - name: http2
+            port: 80
+            targetPort: 8085
+          - name: https
+            port: 443
+            targetPort: 8443
+          - name: tcp
+            port: 31400
+            targetPort: 31400
+          - name: tls
+            port: 15443
+            targetPort: 15443
+      name: istio-ingressgateway
     # Cluster-local gateway for KFServing
     - enabled: false
       name: cluster-local-gateway
