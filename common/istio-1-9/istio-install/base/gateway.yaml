@@ -11,7 +11,13 @@ spec:
   servers:
   - port:
       number: 80
-      name: http
+      name: http-80
+      protocol: HTTP
+    hosts:
+    - '*'
+  - port:
+      number: 8080
+      name: http-8080
       protocol: HTTP
     hosts:
     - '*'
